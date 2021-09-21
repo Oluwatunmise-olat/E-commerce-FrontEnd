@@ -1,0 +1,105 @@
+.product-detail-slider{
+    width: 100%;
+    height: 300px;
+    background-color: rgb(225, 215, 211);
+    margin-bottom: 30px;
+}
+
+
+.back-to-home-btn{
+    border: 1px solid;
+    text-transform: uppercase;
+    padding: 10px;
+    margin: 30px;
+    border-radius: 4px;
+    color: white;
+    background-color: hsl(0, 0%, 29%);
+    font-size: 15px;
+}
+
+.product-detail-flex{
+    display: flex;
+    flex-direction: row;
+    /* border: 1px solid cyan; */
+    margin: 30px;
+    margin-top: 30px;
+    padding: 10px;
+    justify-content: space-around;
+    margin-bottom: 150px;
+}
+
+.product-img{
+    flex: 1;
+    width: 50%;
+    height: auto;
+    border-radius: 6px;
+    margin: 10px;
+    box-shadow: 3px 3px 5px #b3b0b0;
+}
+
+.product-detail-info{
+    margin: 10px;
+    /* border: 1px solid yellow; */
+    flex: 1;
+    padding: 20px;
+    color: hsl(0, 0%, 29%);
+}
+
+.product-description{
+    font-size: 20px;
+    color:  hsl(0, 0%, 29%);
+    margin-bottom: 0.4rem;
+}
+
+.item-name{
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 0.4rem;
+}
+
+.seller{
+    font-size: 20px;
+    margin-bottom: 0.4rem;
+    text-transform: capitalize;
+    font-weight: italic;
+}
+
+.category, .price, .available{
+    font-size: 20px;
+    margin-bottom: 0.4rem;
+}
+
+.category{
+    background-color: lightskyblue;
+    border-radius: 5px;
+    padding: 5px;
+    width: 40%;
+    text-align: center;
+    border-color:rgb(225, 215, 211);
+}
+
+.chat-merchant{
+    background-color: lightseagreen;
+    padding: 3px;
+    width: auto;
+    border-color: transparent;
+    border-radius: 5px;
+    border-width: 1px solid;
+    font-size: 20px;
+    color:hsl(0, 0%, 29%);
+}
+
+
+.add-to-cart{
+    padding: 3px;
+    width: auto;
+    border-color: transparent;
+    border-radius: 5px;
+    border-width: 1px solid;
+    font-size: 20px;
+    color:hsl(0, 0%, 29%);
+    text-transform: capitalize;
+    margin: 20px;
+    background-color: rgb(232, 232, 107);
+}

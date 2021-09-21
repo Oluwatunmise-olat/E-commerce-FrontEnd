@@ -133,10 +133,14 @@ table tr{
 
 .continue-shopping{
     background-color: rgb(50, 54, 58);
+    font-size: 15px;
+    padding: 10px;
 }
 
 .clear-btn{
     background-color: #8d0a0a;
+    font-size: 15px;
+    padding: 10px;
 }
 
 .checkout, .checkout-btn{
@@ -181,6 +185,7 @@ table tr{
     border-color: transparent;
     width: auto;
     margin: auto;
+    font-size: 15px;
     margin-bottom: 50px;
     transform: translate(110%, 0%);
 }
