@@ -6,7 +6,7 @@
 }
 
 .products-main{
-    border: 1px solid;
+    /* border: 1px solid; */
     display: flex;
     flex-direction: row;
     padding: 10px;
@@ -56,13 +56,50 @@
 }
 
 .product-card{
-    border: 1px solid;
+    /* border: 1px solid yellow; */
     padding: 5px;
     margin: 5px;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.product-img{
+    flex: 1;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.product-img:hover{
+    /* animation-name: slide-up; */
+}
+
+/* to enable chat or details page */
+@keyframes slide-up {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 10px;
+        height: 30px;
+    }
+}
+
+.bargain{
+    background:#777070;
+    z-index: 5;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.product-details{
+    flex: 1;
+    align-self: center;
 }
 
 .products-section{
     margin-bottom: 100px;
 }
+

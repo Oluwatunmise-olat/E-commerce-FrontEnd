@@ -29,8 +29,11 @@ export default function Products(){
                 <article className="right-section">
                     <p>4 products found</p>
                     <div className="product-card">
-                        <div style={{width: "100%", height: "300px"}}className="product-img">
+                        {/* if bargain is true set height to 100px else 300px */}
+                        {/* <div style={{width: "100%", height: "100px"}} className="bargain product-img"> */}
+                        <div style={{width: "100%", height: "300px"}} className="product-img">
                             <img style={{maxWidth: "100%", maxHeight: "100%"}} src={TestImg} alt="product image" />
+                            {/* <img style={{maxWidth: "100%", maxHeight: "100%", display: "none"}} src={TestImg} alt="product image" /> */}
                         </div>
 
                         <div className="product-details">
