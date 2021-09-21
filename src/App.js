@@ -10,6 +10,7 @@ import Home from "./components/home";
 import Navbar from "./components/navigation";
 import Register from "./components/register";
 import Cart from "./components/cart";
+import Products from "./components/products";
 
 
 function App() {
@@ -25,6 +26,9 @@ function App() {
             </Route>
             <Route path="/cart">
                 <Cart/>
+            </Route>
+            <Route path="/products">
+                <Products />
             </Route>
         </Switch>
     </Router>

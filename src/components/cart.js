@@ -62,15 +62,25 @@ export default function Cart (){
                     <button className="continue-shopping">
                         continue shopping
                     </button>
-                    <div>
-                        <button className="clear-btn">
-                            clear shopping cart
-                        </button>
-                        <div className="checkout-card">
-                        </div>
-                    </div>
+                    <button className="clear-btn">
+                        clear shopping cart
+                    </button>
             </div>
 
+            {/* checkout section */}
+            <section className="checkout">
+                <div className="checkout-card">
+                    <p className="subtotal">
+                        Subtotal: NGN 400.00
+                    </p>
+                    <p className="order-total">
+                        Order Total: NGN 1000.00
+                    </p>
+                </div>
+            </section>
+            <button className="checkout-btn">
+                Proceed to checkout
+            </button>
         </section>
     )
 }

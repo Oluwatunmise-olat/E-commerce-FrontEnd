@@ -114,4 +114,83 @@ table tr{
 .continue-clear-btn{
     width: 70%;
     margin: auto;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid green; */
+    margin-bottom: 50px;
+}
+
+.continue-shopping, .clear-btn{
+    border-radius: 4px;
+    padding: 4px;
+    color: white;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.continue-shopping{
+    background-color: rgb(50, 54, 58);
+}
+
+.clear-btn{
+    background-color: #8d0a0a;
+}
+
+.checkout, .checkout-btn{
+    /* border: 1px solid blue; */
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    padding: 5px;
+    margin-bottom: 50px;
+}
+
+.checkout{
+    margin-bottom: 10px;;
+}
+
+.checkout-card{
+    border-radius: 4px;
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 3px 2px 7px lightgray;
+}
+
+.subtotal{
+    margin: 10px;
+    margin-right: 0px;
+    border-bottom: 2px solid lightgrey;
+}
+
+.checkout-btn{
+    background-color:rgb(50, 54, 58);
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 1s ease;
+    display: flex;
+    flex-direction: row;
+    border-radius: 4px;
+    justify-content: right;
+    border-color: transparent;
+    width: auto;
+    margin: auto;
+    margin-bottom: 50px;
+    transform: translate(110%, 0%);
+}
+
+.checkout-btn:hover{
+    color:rgb(50, 54, 58);
+    background-color: white;
+}
+
+
+a:visited{
+    color: white;
 }
