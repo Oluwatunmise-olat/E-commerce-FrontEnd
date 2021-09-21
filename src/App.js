@@ -11,6 +11,7 @@ import Navbar from "./components/navigation";
 import Register from "./components/register";
 import Cart from "./components/cart";
 import Products from "./components/products";
+import ProductDetail from "./components/productDetail";
 
 
 function App() {
@@ -29,6 +30,9 @@ function App() {
             </Route>
             <Route path="/products">
                 <Products />
+            </Route>
+            <Route path="/product/detail/">
+                <ProductDetail/>
             </Route>
         </Switch>
     </Router>
