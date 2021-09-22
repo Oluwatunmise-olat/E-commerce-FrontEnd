@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Redirect } from "react-router-dom";
 
 // styles
 import "../styles/auth.css";
@@ -26,7 +27,10 @@ export default function _Auth(){
             }
         })
         .then(resp=>{
-            if (!resp.ok){
+            if (!resp.ok && resp.status === 400){
+                return resp.json()
+
+            }else if (!resp.ok){
                 throw new Error("Response was not Ok");
             }else{
                 // console.log(resp.json());
@@ -34,8 +38,11 @@ export default function _Auth(){
             }
         })
         .then(resp=>{
-            console.log(resp);
+            if (!resp.error){
             setToken(resp);
+            }else{
+                setError({type: "Credential Error", message: resp.error})
+            }
         })
         .catch(error=>{
             console.log(error);
@@ -87,6 +94,9 @@ export default function _Auth(){
                     <button className="login-btn">login</button>
                 </form>
             </div>
+
+            {/* redirect to home page on successful login */}
+            {token && <Redirect to="/" />}
         </React.Fragment>
     )
 }

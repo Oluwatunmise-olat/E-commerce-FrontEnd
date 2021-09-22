@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // styles
@@ -16,6 +16,11 @@ import Auth from "./components/auth";
 
 
 function App() {
+
+    // auth state 
+    //true -> logged in; false -> logged out
+    const [authStatus, setAuthStatus] = useState(false);
+
   return (
       <Router>
         {/* <Navbar/> */}
