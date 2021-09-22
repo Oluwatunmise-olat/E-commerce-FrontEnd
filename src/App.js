@@ -12,12 +12,13 @@ import Register from "./components/register";
 import Cart from "./components/cart";
 import Products from "./components/products";
 import ProductDetail from "./components/productDetail";
+import Auth from "./components/auth";
 
 
 function App() {
   return (
       <Router>
-        <Navbar/>
+        {/* <Navbar/> */}
         <Switch>
             <Route exact path="/">
                 <Home/>
@@ -33,6 +34,9 @@ function App() {
             </Route>
             <Route path="/product/detail/">
                 <ProductDetail/>
+            </Route>
+            <Route to="/login">
+                <Auth />
             </Route>
         </Switch>
     </Router>

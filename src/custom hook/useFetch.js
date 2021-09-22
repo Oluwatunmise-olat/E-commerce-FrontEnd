@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
 
-export default function useFetch(url){
+export default function useFetch(url, method=null, data=null){
 
-    const [response, setResponse] = useState({status: "", data: ""});
+    const [receivedData, setReceivedData] = useState({status: "", data: ""});
 
     useEffect(()=>{
         fetch(url)
@@ -10,14 +10,12 @@ export default function useFetch(url){
             resp.json();
         })
         .then(data=>{
-            setResponse({status: true, data: data});
+            setReceivedData({status: true, data: data});
         })
         .catch(err=>{
-            setResponse({status: false, data: err});
+            setReceivedData({status: false, data: err});
         })
     })
 
-    return (
-        response
-    )
+    return [receivedData]
 }
