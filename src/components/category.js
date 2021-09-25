@@ -19,7 +19,6 @@ export default function Category(){
        })
     },  []);
 
-    // refactor at backend to return category id
     
     {categories && categories.data.map(elm=>{
         elm.id = generateId();

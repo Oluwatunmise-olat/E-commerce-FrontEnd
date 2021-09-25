@@ -1,0 +1,56 @@
+.landing_body{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url("../img/landing_page_assets/landing_pg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+section{
+    /* border: 1px solid teal; */
+    width: 15%;
+    transform: translate(120%, 100%);
+    padding: 10px;
+    margin: 5px;
+}
+
+
+p{
+    font-size: 35px;
+    color: rgb(140, 140, 140);
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.logo_title{
+    text-align: center;
+    font-weight: 900;
+    font-size: 80px;
+    width: auto;
+    margin: auto;
+    color:rgb(179, 177, 177);
+}
+
+.start_now_btn{
+    text-transform: uppercase;
+    width: auto;
+    transform: translate(696%, 200%);
+    cursor: pointer;
+    padding: 3px;
+    border-radius: 5px;
+    border-color: transparent;
+    transition: all .5s linear;
+    font-size: 20px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.start_now_btn:hover{
+    color: white;
+    background-color: #333;
+}
