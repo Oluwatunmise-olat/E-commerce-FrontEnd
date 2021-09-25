@@ -13,7 +13,7 @@ export default function LandingPage (){
                     <p className="about">
                         Browse,
                         <br/>
-                        Bargain 
+                        Bargain.
                         <br/>
                         EveryOne Gains
                     </p>

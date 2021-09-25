@@ -96,7 +96,7 @@ export default function _Auth(){
             </div>
 
             {/* redirect to home page on successful login */}
-            {token && <Redirect to="/" />}
+            {token && <Redirect to="/products" />}
         </React.Fragment>
     )
 }
