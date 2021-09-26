@@ -4,12 +4,13 @@
 
 .svg-flx{
     margin: auto;
+    /* border: 1px solid; */
 }
 
 .cart-empty{
     padding: 10px;
     width: 50%;
-    border: 1px solid;
+    /* border: 1px solid; */
     margin: auto;
     margin-top: 30px;
 }
@@ -17,6 +18,7 @@
 .cart-empty p{
     text-align: center;
 }
+
 
 .cart-items {
     /* border: 1px solid brown; */
@@ -28,29 +30,43 @@
 
 table{
     border-collapse: collapse;
+    /* border: 1px solid; */
+    border-radius: 10px;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 30px;
 }
 
-.tr-headings{
+.tr-headings, .tr-body{
     text-align: center;
 }
 
-table tr td{
+.tr-body{
+    cursor: pointer;
+}
+
+.tr-body:hover{
+    background-color: lightgrey;
+}
+
+table tr td, th{
     text-transform: capitalize;
     width: 25%;
     margin: 5px;
+    padding: 10px;
+    color: hsl(0, 0%, 17%);
 }
 
-table tr{
-    border-bottom: 2px solid;
-    border-color: darkgrey;
-    margin-bottom: 15px;
-    margin: 10px;
+.tr-body td i{
+    margin: 4px;
+    margin-bottom: 1px;
+    color: #555657;
+    cursor: pointer;
 }
 
-table tr td.item{
-    /* border: 1px solid blue; */
-    width: 25%;
-    padding: 14px;
+.tr-body td p{
+    display: inline;
+    font-size: 25px;
 }
 
 .item-flex{
@@ -60,139 +76,78 @@ table tr td.item{
     align-items: center;
 }
 
-table tr td.price{
-    /* border: 1px solid blue; */
-    width: 25%;
-    text-align: center;
+tr:nth-child(even){
+    background-color: #f2f2f2;
 }
 
-
-table tr td.quantity{
-    /* border: 1px solid blue; */
-    width: 25%;
-}
-
-.quantity-flex{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.quantity-flex i{
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-table tr td.subtotal{
-    /* border: 1px solid blue; */
-    width: 25%;
-    text-align: center;
-}
-
-.subtotal-flex{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.subtotal-flex i{
-    margin: 10px;
-    color: white;
-    width: 15%;
-    background-color: #8d0a0a;
-    padding: 3px;
-    border-radius: 3px;
+table tr td i.trash{
+    color: maroon;
 }
 
 table tr{
     margin-top: 20px;
-    border-bottom: 2px solid #bfb9b9;
+    /* border-bottom: 2px solid #bfb9b9; */
 }
 
-.continue-clear-btn{
-    width: 70%;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    padding: 10px;
-    align-items: center;
-    justify-content: space-between;
-    /* border: 1px solid green; */
-    margin-bottom: 50px;
-}
 
 .continue-shopping, .clear-btn{
     border-radius: 4px;
     padding: 4px;
-    color: white;
+    color: #555657;
     border-color: transparent;
     cursor: pointer;
+    margin-left: 135px;
+    margin-right: 120px;
 }
 
 .continue-shopping{
     background-color: rgb(50, 54, 58);
     font-size: 15px;
-    padding: 10px;
+    padding: 5px;
 }
 
 .clear-btn{
     background-color: #8d0a0a;
-    font-size: 15px;
+    font-size: 20px;
+    color: white;
     padding: 10px;
 }
 
-.checkout, .checkout-btn{
+.btn-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.checkout, .wallet-transfer{
     /* border: 1px solid blue; */
-    width: 70%;
-    margin: auto;
+    width: 90%;
     display: flex;
     flex-direction: row;
     justify-content: right;
+    margin-top: 10px;
     padding: 5px;
     margin-bottom: 50px;
+    margin-right: 140px;
 }
 
 .checkout{
     margin-bottom: 10px;;
 }
 
-.checkout-card{
-    border-radius: 4px;
-    background-color: white;
-    padding: 10px;
-    margin: 10px;
-    box-shadow: 3px 2px 7px lightgray;
-}
-
-.subtotal{
-    margin: 10px;
-    margin-right: 0px;
-    border-bottom: 2px solid lightgrey;
-}
-
-.checkout-btn{
+.wallet-transfer{
     background-color:rgb(50, 54, 58);
     color: white;
-    padding: 15px;
+    padding: 10px;
     cursor: pointer;
     transition: all 1s ease;
-    display: flex;
-    flex-direction: row;
     border-radius: 4px;
-    justify-content: right;
     border-color: transparent;
     width: auto;
-    margin: auto;
+    margin-left: 140px;
     font-size: 15px;
     margin-bottom: 50px;
-    transform: translate(110%, 0%);
-}
-
-.checkout-btn:hover{
-    color:rgb(50, 54, 58);
-    background-color: white;
+    /* transform: translate(110%, 0%); */
 }
 
 

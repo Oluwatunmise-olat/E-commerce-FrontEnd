@@ -8,7 +8,7 @@ export default function LandingPage (){
     return (
         <div className="landing_body">
             <h2 className="logo_title">E Bargain</h2>
-            <section>
+            <section className="landing">
                 <div className="landing_div">
                     <p className="about">
                         Browse,

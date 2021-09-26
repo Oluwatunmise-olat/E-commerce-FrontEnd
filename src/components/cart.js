@@ -1,5 +1,6 @@
 import React from "react";
 import {FaMinus, FaPlus, FaTrash } from "react-icons/fa";
+import {Link} from "react-router-dom";
 
 // svg
 import CartSvg from "../styles/svg/Cart.svg"
@@ -17,70 +18,39 @@ export default function Cart (){
                 <p> YOUR CART IS EMPTY</p>
             </div>
 
-            <div className="svg-flx" style={{height: "100%", width: "50%"}}>
+            <div className="svg-flx" style={{height: "100%", width: "100%"}}>
                 <img src={`${CartSvg}`} style={{width: "100%", height: "300px"}} alt="cart svg" />
             </div>
 
-            {/* if cart isn't empty */}
-            <div className="cart-items">
-                <table>
-                    <tr className="tr-headings">
-                        <td>item</td>
-                        <td>price</td>
-                        <td>quantity</td>
-                        <td>subtotal</td>
-                    </tr>
-                    <tr>
-                        <td className="item">
-                            <div className="item-flex">
-                                <div style={{width: "50%"}}>
-                                    <img style={{width: "100%"}} src={TestImg} alt="product image" />
-                                </div>
-                                <p className="item-name">Nike</p>
-                            </div>
-                        </td>
-                        <td className="price">
-                            <p>NGN 200.00</p>
-                        </td>
-                        <td className="quantity">
-                            <div className="quantity-flex">
-                                <i><FaMinus/></i>
-                                <p>1</p>
-                                <i><FaPlus/></i>
-                            </div>
-                        </td>
-                        <td className="subtotal">
-                            <div className="subtotal-flex">
-                                <p>NGN 200.00</p>
-                                <i><FaTrash/></i>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
+            <table>
+                <tr className="tr-headings">
+                    <th>name</th>
+                    <th>quantity</th>
+                    <th>price</th>
+                    <th>subtotal</th>
+                    <th></th>
+                </tr>
+                <tr className="tr-body">
+                    <td>Phone</td>
+                    <td>
+                        <i><FaMinus/></i>
+                        <p>1</p>
+                        <i><FaPlus/></i>
+                    </td>
+                    <td>NGN 399.99</td>
+                    <td>NGN 400.00</td>
+                    <td><i className="trash"><FaTrash/></i></td>
+                </tr>
+            </table>
+            <div className="btn-section">
+                <button className="continue-shopping"><Link to="/products">continue shopping</Link></button>
+                <button className="clear-btn">clear shopping cart</button>
             </div>
-            <div className="continue-clear-btn">
-                    <button className="continue-shopping">
-                        continue shopping
-                    </button>
-                    <button className="clear-btn">
-                        clear shopping cart
-                    </button>
+            <div className="checkout">
+                <p>subtotal: NGN 400.00</p>
             </div>
+            <button className="wallet-transfer">Wallet wire</button>
 
-            {/* checkout section */}
-            <section className="checkout">
-                <div className="checkout-card">
-                    <p className="subtotal">
-                        Subtotal: NGN 400.00
-                    </p>
-                    <p className="order-total">
-                        Order Total: NGN 1000.00
-                    </p>
-                </div>
-            </section>
-            <button className="checkout-btn">
-                Proceed to checkout
-            </button>
         </section>
     )
-}
+    }

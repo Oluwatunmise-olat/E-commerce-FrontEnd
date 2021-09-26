@@ -3,17 +3,25 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    opacity: 1;
+    background-color: rgb(67, 67, 67);
 }
 
+
 .register{
-    width: 50%;
+    width: 40%;
     /* border: 1px solid; */
     margin: auto;
     transform: translateY(10%);
     border-radius: 4px;
     padding: 10px;
     margin-bottom: 100px;
-    box-shadow: 1px 2px 5px #8a8a8a;
+    box-shadow: 1px 2px 5px #3a3a3a;
+    background-color: rgb(55, 55, 55);
     /* margin-right: 10%; */
 }
 
@@ -28,14 +36,14 @@
 
 .register-form{
     padding: 10px;
-    margin: 4px;
-    /* border: 1px solid blue; */
+    /* margin: 4px; */
+    margin: auto;
 }
 
 label{
     text-transform: capitalize;
     /* font-weight: lighter; */
-    text-align: justify;
+    /* text-align: justify; */
     /* border: 1px solid; */
     padding: 4px;
     margin-left: 20px;
