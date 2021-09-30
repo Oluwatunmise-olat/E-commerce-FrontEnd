@@ -11,17 +11,19 @@
 
 
 section.landing{
-    /* border: 1px solid teal; */
+    /* border: 1px solid rgb(132, 139, 139); */
     width: 15%;
     padding: 10px;
     margin: 5px;
     position: fixed;
-    transform: translate(120%, 300px);
+    top: 45%;
+    left: 20.8%;
+    /* transform: translate(120%, 300px); */
 }
 
 
-p{
-    font-size: 30px;
+.landing_body p{
+    font-size: 3rem;
     color: rgb(140, 140, 140);
     text-transform: capitalize;
     text-align: center;
@@ -32,11 +34,14 @@ p{
 .logo_title{
     text-align: center;
     font-weight: 900;
-    font-size: 80px;
+    font-size: 5rem;
+    word-spacing: 1.5rem;
     position: fixed;
     width: auto;
+    left: 20.8%;
+    top: 15%;
     color:rgb(179, 177, 177);
-    transform: translate(65%, 40%);
+    /* transform: translate(65%, 40%); */
 }
 
 
@@ -45,12 +50,14 @@ p{
     width: auto;
     transform: translate(696%, 200%);
     cursor: pointer;
-    padding: 3px;
+    padding: 7px;
     border-radius: 5px;
     border-color: transparent;
     transition: all .5s linear;
     position: fixed;
-    transform: translate(730px, 396px);
+    top: 50%;
+    left: 26.9%;
+    /* transform: translate(730px, 396px); */
     font-size: 20px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
