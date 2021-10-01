@@ -1,5 +1,4 @@
 export const refreshTokenUrl = "http://localhost:8000/gateway/token/refresh";
-export const getProductsUrl = "http://localhost:8000/inventory/product/";
 
 // Auth Urls
 export const loginUrl = "http://localhost:8000/gateway/login";
@@ -8,3 +7,9 @@ export const registerUrl = "http://localhost:8000/gateway/register";
 
 // Category Urls
 export const getCategoriesUrl = "http://localhost:8000/inventory/category/";
+
+
+// Product Urls
+export const getProductsUrl = "http://localhost:8000/inventory/product/";
+// takes in a slug
+export const getSingleProductUrl = "http://localhost:8000/inventory/product/";

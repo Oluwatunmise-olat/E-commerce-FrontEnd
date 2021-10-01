@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { FaStarHalf, FaStar } from "react-icons/fa";
 import {axiosInstance} from "./my_axios_request";
 import { getProductsUrl } from "./urls";
@@ -63,10 +64,10 @@ export default function Products(){
                     {products && products.map((item, index)=>{
                         return (
                     <div className="product-card">
-                        <div onClick={()=>{
-                            window.location.href ="./productDetail"
-                        }} style={{width: "100%", height: "300px"}} className="product-img">
+                        <div style={{width: "100%", height: "300px"}} className="product-img">
+                            <Link to={`/product-detail/${item.slug}`}>
                             <img style={{maxWidth: "100%", maxHeight: "100%"}} src={item.image} alt="product image" />
+                            </Link>
                         </div>
                         <div className="product-details">
                             {/* should contain product avg rating,
@@ -77,11 +78,10 @@ export default function Products(){
                                 <p className="price">Product Price: NGN {item.price}.00</p>
                             </div>
                             <p>Available: {item.availability_status}</p>
-                            <p className="category">Category: {item.category_name}</p>
+                            {/* <p className="category">Category: {item.category_name}</p> */}
                             {/* <p>{item.seller} owner id</p> */}
                             {/* <p>{item.seller_name} owner</p> */}
                             <p className="avg-rating">Rating: 5<i><FaStar/></i></p>
-                            <p>Description: {item.product_description}</p>
                             <p className="btns">
                                 <button>Bargain with seller</button>
                                 <button>Add to Cart</button>

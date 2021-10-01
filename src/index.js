@@ -19,7 +19,7 @@ ReactDOM.render(
           <Route exact path="/auth">
             <LoginOrRegister />
           </Route>
-          <Route exact path="/product-detail" component={productDetail} />
+          <Route exact path="/product-detail/:slug" component={productDetail} />
         </Switch>
       </React.StrictMode>
   </Router>

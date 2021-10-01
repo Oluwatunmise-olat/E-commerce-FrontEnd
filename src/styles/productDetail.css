@@ -11,6 +11,7 @@
     text-transform: uppercase;
     padding: 10px;
     margin: 30px;
+    margin-left: 50px;
     border-radius: 4px;
     color: white;
     background-color: hsl(0, 0%, 29%);
@@ -56,6 +57,7 @@
     text-transform: uppercase;
     font-weight: bold;
     margin-bottom: 0.4rem;
+    width: 100%;
 }
 
 .seller{
@@ -65,35 +67,37 @@
     font-weight: italic;
 }
 
-.category, .price, .available{
+.p-category, .price, .available{
     font-size: 20px;
     margin-bottom: 0.4rem;
 }
 
-.category{
-    background-color: lightskyblue;
-    border-radius: 5px;
-    padding: 5px;
-    width: 40%;
-    text-align: center;
+.product-detail-info .price{
+    margin-left: 0px;
+}
+
+.product-detail-info .p-category{
+    text-align: left;
     border-color:rgb(225, 215, 211);
+    margin-left: 0px;
 }
 
 .chat-merchant{
-    background-color: lightseagreen;
     padding: 3px;
-    width: auto;
+    width: 50%;
     border-color: transparent;
     border-radius: 5px;
     border-width: 1px solid;
     font-size: 20px;
     color:hsl(0, 0%, 29%);
+    cursor: pointer;
 }
 
 
 .add-to-cart{
     padding: 3px;
-    width: auto;
+    cursor: pointer;
+    width: 50%;
     border-color: transparent;
     border-radius: 5px;
     border-width: 1px solid;
@@ -101,5 +105,4 @@
     color:hsl(0, 0%, 29%);
     text-transform: capitalize;
     margin: 20px;
-    background-color: rgb(232, 232, 107);
 }
