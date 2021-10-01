@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import LandingPage from "./components/LandingPage";
 import Products from "./components/products";
 import LoginOrRegister from "./components/login_register";
+import productDetail from "./components/productDetail";
 
 ReactDOM.render(
   <Router>
@@ -18,6 +19,7 @@ ReactDOM.render(
           <Route exact path="/auth">
             <LoginOrRegister />
           </Route>
+          <Route exact path="/product-detail" component={productDetail} />
         </Switch>
       </React.StrictMode>
   </Router>

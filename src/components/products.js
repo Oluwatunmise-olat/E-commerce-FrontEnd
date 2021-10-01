@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 import { FaStarHalf, FaStar } from "react-icons/fa";
 import {axiosInstance} from "./my_axios_request";
 import { getProductsUrl } from "./urls";
+import { getToken } from "./localStorage";
+import NavBar from "./navigation";
 
 // styles
 import "../styles/products.css";
@@ -17,95 +19,80 @@ export default function Products(){
 
     const [products, setProducts] = React.useState();
 
-    React.useEffect(()=>{
-        setTimeout(()=>axiosInstance({
+    useEffect(()=>{
+        let _token = getToken();
+        axios({
             method: 'GET',
             url: getProductsUrl,
             headers: {
-                Authorization: `Bearer ${JSON.parse(window.localStorage.getItem("token"))["access_token"]}`
+                'content-type': 'application/json',
+                Authorization: `Bearer ${_token}`
             }
         })
         .then(resp=>{
-            console.log(resp);
+            // console.log(resp);
             setProducts(resp.data.data);
         })
         .catch(err=>{
             console.log(err.response);
-            if (err.response.status == 403){
-                let originalReq = err.response.config;
-                axios({
-                    method: "POST",
-                    url: "http://127.0.0.1:8000/gateway/token/refresh",
-                    data: {
-                        refresh: JSON.parse(window.localStorage.getItem("token"))["refresh_token"]
-                    }
-                })
-                .then(resp=>{
-                    console.log(resp, "neww")
-										window.localStorage.setItem("token", JSON.stringify({"access_token": resp.data.access, "refresh_token": resp.data.refresh}))
-										originalReq.headers = {
-											Authorization: `Bearer ${resp.data.access}`
-										}
-										return axios(originalReq);
-                })
-                .catch(err=>{
-                    console.log("fail");
-                    console.log(err.response.config.data)
-                    console.log(err.response)
-                    if (err.response.status === 400 && err.response.data.error == 'Not Found'){
-                        // return window.location.href = "/login";
-												console.log("we gast login agsin")
-                    }else{
-                        console.log(err.response, "stuck")
-                    }
-                })
-            }
         })
-        , 3000)
-    }, [])
+    }, []);
 
     return (
+        <React.Fragment>
+        <NavBar/>
         <section className="products-section">
             {/* hero section */}
             <div className="products-slider">
             </div>
+
+            {/* products display and categories */}
             <section className="products-main">
+                {/* category section */}
                 <article className="left-section">
                     <div className="category-card">
-                        <p className="header">Category</p>
+                        <p className="header">Categories</p>
                         <div className="category-list">
-                            <p>all</p>
                             <Categories />
                         </div>
                     </div>
                 </article>
+                {/* products section */}
                 <article className="right-section">
-                    <p>4 products found</p>
+                    <p>{products ? products.length : ""} Product{products ? products.length > 1 ? "s" : "" : ""} Found</p>
+                    {products && products.map((item, index)=>{
+                        return (
                     <div className="product-card">
-                        {/* if bargain is true set height to 100px else 300px */}
-                        {/* <div style={{width: "100%", height: "100px"}} className="bargain product-img"> */}
-                        {products && products.map((item, index)=>{
-                           return (<>
-															<div style={{width: "100%", height: "300px"}} className="product-img">
-																<img style={{maxWidth: "100%", maxHeight: "100%"}} src={item.image} alt="product image" />
-															{/* <img style={{maxWidth: "100%", maxHeight: "100%", display: "none"}} src={TestImg} alt="product image" /> */}
-															</div>
-
-															<div className="product-details">
-																	{/* should contain product avg rating,
-																			Name, price
-																		*/}
-																	<p className="name">{item.name}</p>
-																	<p className="avg-rating">5<i><FaStar/></i></p>
-																	<p className="price"> NGN {item.price}</p>
-															</div>
-
-                            </>)
-                        })
-                        }
+                        <div onClick={()=>{
+                            window.location.href ="./productDetail"
+                        }} style={{width: "100%", height: "300px"}} className="product-img">
+                            <img style={{maxWidth: "100%", maxHeight: "100%"}} src={item.image} alt="product image" />
+                        </div>
+                        <div className="product-details">
+                            {/* should contain product avg rating,
+                                    Name, price
+                                */}
+                            <div className="price-name">
+                                <p className="name">Product Name: {item.name}</p>
+                                <p className="price">Product Price: NGN {item.price}.00</p>
+                            </div>
+                            <p>Available: {item.availability_status}</p>
+                            <p className="category">Category: {item.category_name}</p>
+                            {/* <p>{item.seller} owner id</p> */}
+                            {/* <p>{item.seller_name} owner</p> */}
+                            <p className="avg-rating">Rating: 5<i><FaStar/></i></p>
+                            <p>Description: {item.product_description}</p>
+                            <p className="btns">
+                                <button>Bargain with seller</button>
+                                <button>Add to Cart</button>
+                            </p>
+                        </div>
                     </div>
+                        )})
+                    }
                 </article>
             </section>
         </section>
+        </React.Fragment>
     )
 }
