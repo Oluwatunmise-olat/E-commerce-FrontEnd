@@ -3,9 +3,10 @@
     width: 100%;
     flex-direction: row;
     align-items: center;
-    /* border: 1px solid yellow; */
     justify-content: space-between;
-    background-color:hsl(0, 6%, 87%);
+    /* background-color:hsl(0, 6%, 87%); */
+    border-bottom: 2px solid;
+    border-color: rgb(63, 63, 63);
 }
 
 .navbar p,
@@ -31,6 +32,7 @@
     background-color: yellow;
     padding: 3px;
     width: auto;
+    border: 1px solid transparent;
     text-align: center;
     font-size: 30px;
     font-weight: bold;
@@ -55,6 +57,7 @@ a:active, a:visited{
     justify-content: space-around;
     /* border: 1px solid green; */
     align-items: center;
+    width: auto;
     padding: 7px;
     margin-right: 30px;
 }
@@ -62,13 +65,29 @@ a:active, a:visited{
 .search-cart input{
     border-radius: 4px;
     border-width: 1px;
+    background-color: white;
     margin-right: 3px;
     padding: 5px;
 }
 
+.search-cart input:focus{
+    background-color: white;
+}
 
-.search-cart i .cart-icon{
-    width: 35px;
+.search-cart{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    text-align:center;
+    margin: auto;
+    position: relative;
+    top: 7px;
+}
+
+
+.search-cart i{
+    width: 30px;
     position: relative;
     top: 3px;
 }

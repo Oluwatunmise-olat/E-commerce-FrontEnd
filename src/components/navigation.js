@@ -17,7 +17,7 @@ export default function NavBar(){
                 {/* serach bar and cart icon */}
                 <div className="search-cart">
                     <input type="text" placeholder="search" autoFocus />
-                    <i><FaCartPlus className="cart-icon"  /></i>
+                    <i style={{margin: "5px"}}><FaCartPlus size="2x" style={{width: "32px", position: "relative", top: "-10px"}}/></i>
                 </div>
                 {/* login/logout button */}
                 <div className="nav-login">

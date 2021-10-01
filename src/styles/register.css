@@ -32,9 +32,9 @@ input[type=text]:focus, input[type=password]:focus{
     opacity: 1;
 }
 
-a{
+/* a{
     color: dodgerblue;
-}
+} */
 
 .error{
     width: 70%;
