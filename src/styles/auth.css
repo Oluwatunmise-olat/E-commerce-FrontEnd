@@ -1,53 +1,37 @@
-.overlay{
-    background-color:rgb(55, 55, 55);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* z-index: 3; */
-    opacity: 1;
-}
-
-
-.login form{
-    z-index: 3;
-    background-color: hsl(0, 1%, 28%);
-    opacity: 1;
-    width: 50%;
-    margin: auto;
-    transform: translate(0%, 50%);
-    box-shadow: 2px 1px 4px rgb(77, 77, 77);
-}
-
-form{
+.form-container{
+    padding: 16px;
     max-width: 50%;
-    border-radius: 5px;
-    padding: 10px;
+}
+
+input[type=text], input[type=password]{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus{
+    background: #ddd;
+    outline: none;
 }
 
 .login-btn{
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 27px;
-    border-width: 1px;
-    border-color:rgb(77, 74, 74);
-    background-color: rgb(50, 54, 58);
-    margin: 20px;
-    text-transform: capitalize;
-    width: 30%;
-    cursor: pointer;
+    background-color: #04AA6D;
     color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
 }
 
-.error{
-    /* border: 1px solid red; */
-    border-radius: 5px;
-    background-color: hsl(0, 0%, 79%);
-    padding: 20px;
-    text-align: center;
-    width: 50%;
-    text-transform: capitalize;
-    margin: auto;
-    transform: translate(0%, 100px);
+.login-btn:hover{
+    opacity: 1;
+}
+
+a{
+    color: dodgerblue;
 }

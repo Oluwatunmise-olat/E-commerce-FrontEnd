@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaUser } from "react-icons/fa";
 import { Redirect } from "react-router-dom";
+import { registerUrl } from "./urls";
 
 // components
 import useFetch from "../custom hook/useFetch";
@@ -9,8 +10,6 @@ import useFetch from "../custom hook/useFetch";
 import "../styles/register.css";
 
 // register endpoint
-const url = "http://localhost:8000/gateway/register";
-
 export default function Register (){
 
     const [error, setError] = useState({type: "", message: ""});
@@ -19,7 +18,7 @@ export default function Register (){
     const [response, setResponse] = useState();
 
     function _register(url, payload){
-        fetch(url, {
+        fetch(registerUrl, {
             method: 'POST',
             body:JSON.stringify(payload),
             headers: {
@@ -55,17 +54,18 @@ export default function Register (){
         }
         // make a call to register endpoint
         // console.log(validDetails);
-        {validDetails && _register(url, validDetails)};
+        {validDetails && _register(registerUrl, validDetails)};
     }
 
-    // console.log(validDetails)
-
     return (
-        <div className="register-flex">
-            <div className="register">
-                <p>Register Here</p>
-                {/* a div for error messages */}
+						<React.Fragment>
+							{error.message !== "" &&
+								<div className="error">
+									<p>{error.message}</p>
+								</div>
+							 }
                 <form className="register-form" onSubmit={handleSubmit}>
+									<div className="form-container">
                     <label htmlFor="username">Username <i><FaUser /></i>: </label>
                     <input type="text" onChange={handleChange} name="username" id="username" />
 
@@ -76,9 +76,9 @@ export default function Register (){
                     <input type="password" onChange={handleChange} name="password2" id="password2" />
 
                     <button className="register-btn">Register</button>
+										</div>
                 </form>
-            </div>
             {response && response.status &&<Redirect to="/login"/>}
-        </div>
+					</React.Fragment>
     )
 }

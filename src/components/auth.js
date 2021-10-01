@@ -2,15 +2,11 @@ import React, { useState, useEffect, useContext } from "react";
 import { Redirect } from "react-router-dom";
 import {LoginContext} from "../App";
 import "../styles/auth.css";
-
-// login endpoint
-const loginUrl = "http://localhost:8000/gateway/login";
+import { loginUrl } from "./urls";
 
 export default function _Auth(){
 
     let _storage = window.localStorage;
-
-    const {isLoggedIn, setIsLoggedIn} = useContext(LoginContext);
     
     const _login = (url, payload) =>{
         fetch(url, {
@@ -69,30 +65,26 @@ export default function _Auth(){
                 username: loginCredentials.username,
                 password: loginCredentials.password
             })
-            setIsLoggedIn(true);
         }
     }
 
     return (
-        <React.Fragment>
-            
+        <React.Fragment> 
             <>
-                <div className="overlay"></div>
-                <div className="login">
-                    <div className={error.type ? "error" : ""}>
-                        {error && <h2>{error.message}</h2>}
-                    </div>
-                    <form onSubmit={handleSubmit}>
-                        <label htmlFor="username">Username</label>
-                        <input onChange={handleChange} type="text" id="username" name="username" />
-                        <label htmlFor="password">Password</label>
-                        <input onChange={handleChange} type="password" id="password" name="password" />
-                        <button className="login-btn">login</button>
-                    </form>
-                </div>
+							<div className="overlay"></div>
+							<div className="login">
+									<div className={error.type ? "error" : ""}>
+											{error && <h2>{error.message}</h2>}
+									</div>
+									<form onSubmit={handleSubmit} className="form-container">
+											<label htmlFor="username">Username</label>
+											<input onChange={handleChange} type="text" id="username" name="username" />
+											<label htmlFor="password">Password</label>
+											<input onChange={handleChange} type="password" id="password" name="password" />
+											<button className="login-btn">login</button>
+									</form>
+							</div>
             </>
-            
-
             {/* redirect to home page on successful login */}
             {token && <Redirect to="/" />}
         </React.Fragment>

@@ -5,21 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
-import Auth from "./components/auth";
 import LandingPage from "./components/LandingPage";
 import Products from "./components/products";
+import LoginOrRegister from "./components/login_register";
 
 ReactDOM.render(
   <Router>
       <React.StrictMode>
         <Switch>
-          <Route path="/" component={App}/>
-          <Route path="/login">
-            <Auth />
+          <Route exact path="/" component={App}/>
+          <Route exact path="/product" component={Products} />
+          <Route exact path="/auth">
+            <LoginOrRegister />
           </Route>
-          <Route path="/product" component={Products} />
         </Switch>
-        {/* <App /> */}
       </React.StrictMode>
   </Router>
 ,document.getElementById('root')

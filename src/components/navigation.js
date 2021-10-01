@@ -22,7 +22,7 @@ export default function NavBar(){
                 {/* login/logout button */}
                 <div className="nav-login">
                     <button>
-                        <Link to="#">Login</Link>
+                        <Link to="/auth">Login</Link>
                     </button>
                 </div>
             </div>
