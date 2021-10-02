@@ -10,7 +10,7 @@ import TestImg from "../img/test-img.png";
 import axios from "axios";
 import { getToken } from "./localStorage";
 import NavBar from "./navigation";
-import AddToCart from "./addToCart";
+import AddToCart from "./cartFunctionalities";
 
 const ProductDetail = () => {
 
