@@ -23,13 +23,14 @@
 .nav-logo p{
     margin-left: 15px;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 35px;
     padding: 3px;
+    color: black;
 }
 
 .nav-login button{
     border-radius: 5px;
-    background-color: yellow;
+    background-color: black;
     padding: 3px;
     width: auto;
     border: 1px solid transparent;

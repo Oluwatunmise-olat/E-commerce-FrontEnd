@@ -37,19 +37,19 @@ table{
     margin-bottom: 30px;
 }
 
-.tr-headings, .tr-body{
+.tbody-headings, .tbody-body{
     text-align: center;
 }
 
-.tr-body{
+.tbody-body{
     cursor: pointer;
 }
 
-.tr-body:hover{
+.tbody-body:hover{
     background-color: lightgrey;
 }
 
-table tr td, th{
+table tbody td, th{
     text-transform: capitalize;
     width: 25%;
     margin: 5px;
@@ -57,14 +57,14 @@ table tr td, th{
     color: hsl(0, 0%, 17%);
 }
 
-.tr-body td i{
+.tbody-body td i{
     margin: 4px;
     margin-bottom: 1px;
     color: #555657;
     cursor: pointer;
 }
 
-.tr-body td p{
+.tbody-body td p{
     display: inline;
     font-size: 25px;
 }
@@ -76,15 +76,15 @@ table tr td, th{
     align-items: center;
 }
 
-tr:nth-child(even){
+tbody:nth-child(even){
     background-color: #f2f2f2;
 }
 
-table tr td i.trash{
+table tbody td i.trash{
     color: maroon;
 }
 
-table tr{
+table tbody{
     margin-top: 20px;
     /* border-bottom: 2px solid #bfb9b9; */
 }

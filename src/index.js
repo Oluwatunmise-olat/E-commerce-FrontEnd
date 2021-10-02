@@ -9,6 +9,7 @@ import LandingPage from "./components/LandingPage";
 import Products from "./components/products";
 import LoginOrRegister from "./components/login_register";
 import productDetail from "./components/productDetail";
+import Cart from "./components/cart";
 
 ReactDOM.render(
   <Router>
@@ -19,6 +20,7 @@ ReactDOM.render(
           <Route exact path="/auth">
             <LoginOrRegister />
           </Route>
+          <Route path="/cart" exact component={Cart} />
           <Route exact path="/product-detail/:slug" component={productDetail} />
         </Switch>
       </React.StrictMode>

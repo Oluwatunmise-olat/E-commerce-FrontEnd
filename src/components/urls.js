@@ -13,3 +13,6 @@ export const getCategoriesUrl = "http://localhost:8000/inventory/category/";
 export const getProductsUrl = "http://localhost:8000/inventory/product/";
 // takes in a slug
 export const getSingleProductUrl = "http://localhost:8000/inventory/product/";
+
+// Cart Urls
+export const generalCartUrl = "http://localhost:8000/order/cart/";

@@ -77,7 +77,7 @@ export default function Products(){
                                 <p className="name">Product Name: {item.name}</p>
                                 <p className="price">Product Price: NGN {item.price}.00</p>
                             </div>
-                            <p>Available: {item.availability_status}</p>
+                            <p>Available: {item.availability_status ? "True": "False"}</p>
                             {/* <p className="category">Category: {item.category_name}</p> */}
                             {/* <p>{item.seller} owner id</p> */}
                             {/* <p>{item.seller_name} owner</p> */}

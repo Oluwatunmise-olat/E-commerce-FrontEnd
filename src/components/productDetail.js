@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getSingleProductUrl } from "./urls";
 
@@ -10,12 +10,21 @@ import TestImg from "../img/test-img.png";
 import axios from "axios";
 import { getToken } from "./localStorage";
 import NavBar from "./navigation";
+import AddToCart from "./addToCart";
 
 const ProductDetail = () => {
 
     const {slug} = useParams();
     const _token = getToken();
     const [product, setProduct] = React.useState();
+    const [messageFlash, setMessageFlash] = useState();
+
+    const toCart = (id) => {
+        let resp = AddToCart(_token, id);
+        if (resp.status === 201)return setMessageFlash({type:"success", message: "Item Added to Cart"});
+        else setMessageFlash({type:"failed", message:"Item Already in Cart"});
+        return null
+    }
 
     React.useEffect(()=>{
         const SingleProductUrl = getSingleProductUrl + `${slug}/`;
@@ -61,7 +70,9 @@ const ProductDetail = () => {
                     <p className="available">Available: {product.availability_status ? "True": "False"}</p>
                     <p className="btns">
                         <button>Bargain with seller</button>
-                        <button>Add to Cart</button>
+                        <button onClick={
+                            ()=>toCart(product.id)
+                        }>{messageFlash ? "Check Cart" : "Add to Cart"}</button>
                     </p>
                 </div>
             </div>
