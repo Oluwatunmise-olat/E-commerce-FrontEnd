@@ -7,6 +7,15 @@ import "../styles/navigation.css";
 
 export default function NavBar(){
 
+    const [search, setSearch] = React.useState();
+
+    const loadData = (e) => {
+        e.preventDefault();
+        if (search.length >=2){
+           window.location.href = `/search/${search}/`
+        }
+    }
+
     return (
         <nav className="navbar">
             {/* heading/logo */}
@@ -16,12 +25,16 @@ export default function NavBar(){
             <div className="right-nav-content">
                 {/* serach bar and cart icon */}
                 <div className="search-cart">
-                    <input type="text" placeholder="search" autoFocus />
-                    <i style={{margin: "5px"}}><FaCartPlus size="2x" style={{width: "32px", position: "relative", top: "-10px"}}/></i>
+                    <form onSubmit={loadData}>
+                        <input type="text" onChange={(e)=>{
+                            setSearch(e.target.value);
+                        }} placeholder="search" autoFocus />
+                    </form>
+                    <i style={{margin: "5px", marginLeft: "10px"}}><FaCartPlus size="2x" style={{width: "32px", position: "relative", top: "-10px"}}/></i>
                 </div>
                 {/* login/logout button */}
                 <div className="nav-login">
-                    <button>
+                    <button style={{padding: "2px"}}>
                         <Link to="/auth">Login</Link>
                     </button>
                 </div>

@@ -10,6 +10,7 @@ import Products from "./components/products";
 import LoginOrRegister from "./components/login_register";
 import productDetail from "./components/productDetail";
 import Cart from "./components/cart";
+import SearchPage from "./components/searchPage";
 
 ReactDOM.render(
   <Router>
@@ -21,6 +22,7 @@ ReactDOM.render(
             <LoginOrRegister />
           </Route>
           <Route path="/cart" exact component={Cart} />
+          <Route path="/search/:q" exact component={SearchPage} />
           <Route exact path="/product-detail/:slug" component={productDetail} />
         </Switch>
       </React.StrictMode>

@@ -9,8 +9,6 @@ import Auth from "./components/auth";
 import NavBar from "./components/navigation";
 import Products from "./components/products";
 
-let _storage = window.localStorage;
-
 function App(){
 
     return (

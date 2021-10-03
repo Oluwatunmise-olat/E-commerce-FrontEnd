@@ -63,15 +63,21 @@ a:active, a:visited{
     margin-right: 30px;
 }
 
-.search-cart input{
+.search-cart form input{
     border-radius: 4px;
     border-width: 1px;
     background-color: white;
     margin-right: 3px;
-    padding: 5px;
+    padding: 10px;
+    width: 100%;
 }
 
-.search-cart input:focus{
+.search-cart form{
+    margin-right: 15px;
+    width: 100%;
+}
+
+.search-cart form input:focus{
     background-color: white;
 }
 

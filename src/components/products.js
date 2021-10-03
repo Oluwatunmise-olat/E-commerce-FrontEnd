@@ -19,9 +19,10 @@ import Categories from "./category";
 export default function Products(){
 
     const [products, setProducts] = React.useState();
+    let _token = getToken();
+
 
     useEffect(()=>{
-        let _token = getToken();
         axios({
             method: 'GET',
             url: getProductsUrl,
